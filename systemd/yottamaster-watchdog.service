@@ -1,0 +1,11 @@
+[Unit]
+Description=Yottamaster USB + Storage Watchdog
+After=local-fs.target docker.service
+Wants=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/yottamaster-watchdog.sh
+
+[Install]
+WantedBy=multi-user.target
